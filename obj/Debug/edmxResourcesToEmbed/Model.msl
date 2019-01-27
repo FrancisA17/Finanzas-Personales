@@ -1,0 +1,124 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="BDFinanzasPersonalesModelStoreContainer" CdmEntityContainer="BDFinanzasPersonalesEntities">
+    <EntitySetMapping Name="Egresos">
+      <EntityTypeMapping TypeName="BDFinanzasPersonalesModel.Egresos">
+        <MappingFragment StoreEntitySet="Egresos">
+          <ScalarProperty Name="EgresoID" ColumnName="EgresoID" />
+          <ScalarProperty Name="TipoEgresoID" ColumnName="TipoEgresoID" />
+          <ScalarProperty Name="TipoPagoxDefecto" ColumnName="TipoPagoxDefecto" />
+          <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
+          <ScalarProperty Name="Estado" ColumnName="Estado" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="EstadoTransaccion">
+      <EntityTypeMapping TypeName="BDFinanzasPersonalesModel.EstadoTransaccion">
+        <MappingFragment StoreEntitySet="EstadoTransaccion">
+          <ScalarProperty Name="EstadoTransaccionID" ColumnName="EstadoTransaccionID" />
+          <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Ingresos">
+      <EntityTypeMapping TypeName="BDFinanzasPersonalesModel.Ingresos">
+        <MappingFragment StoreEntitySet="Ingresos">
+          <ScalarProperty Name="IngresoID" ColumnName="IngresoID" />
+          <ScalarProperty Name="TipoIngresoID" ColumnName="TipoIngresoID" />
+          <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
+          <ScalarProperty Name="Institucion" ColumnName="Institucion" />
+          <ScalarProperty Name="Estado" ColumnName="Estado" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ProcesoCorte">
+      <EntityTypeMapping TypeName="BDFinanzasPersonalesModel.ProcesoCorte">
+        <MappingFragment StoreEntitySet="ProcesoCorte">
+          <ScalarProperty Name="CorteID" ColumnName="CorteID" />
+          <ScalarProperty Name="Año" ColumnName="Año" />
+          <ScalarProperty Name="Mes" ColumnName="Mes" />
+          <ScalarProperty Name="FechaCorte" ColumnName="FechaCorte" />
+          <ScalarProperty Name="BalanceInicial" ColumnName="BalanceInicial" />
+          <ScalarProperty Name="TotalIngresos" ColumnName="TotalIngresos" />
+          <ScalarProperty Name="TotalEgresos" ColumnName="TotalEgresos" />
+          <ScalarProperty Name="BalanceAlCorte" ColumnName="BalanceAlCorte" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TipoEgreso">
+      <EntityTypeMapping TypeName="BDFinanzasPersonalesModel.TipoEgreso">
+        <MappingFragment StoreEntitySet="TipoEgreso">
+          <ScalarProperty Name="TipoEgresoID" ColumnName="TipoEgresoID" />
+          <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
+          <ScalarProperty Name="Estado" ColumnName="Estado" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TipoIngreso">
+      <EntityTypeMapping TypeName="BDFinanzasPersonalesModel.TipoIngreso">
+        <MappingFragment StoreEntitySet="TipoIngreso">
+          <ScalarProperty Name="TipoIngresoID" ColumnName="TipoIngresoID" />
+          <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
+          <ScalarProperty Name="Estado" ColumnName="Estado" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TipoPago">
+      <EntityTypeMapping TypeName="BDFinanzasPersonalesModel.TipoPago">
+        <MappingFragment StoreEntitySet="TipoPago">
+          <ScalarProperty Name="TipoPagoID" ColumnName="TipoPagoID" />
+          <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
+          <ScalarProperty Name="Estado" ColumnName="Estado" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TipoPersona">
+      <EntityTypeMapping TypeName="BDFinanzasPersonalesModel.TipoPersona">
+        <MappingFragment StoreEntitySet="TipoPersona">
+          <ScalarProperty Name="TipoPersonaID" ColumnName="TipoPersonaID" />
+          <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TipoTransaccion">
+      <EntityTypeMapping TypeName="BDFinanzasPersonalesModel.TipoTransaccion">
+        <MappingFragment StoreEntitySet="TipoTransaccion">
+          <ScalarProperty Name="TipoTransaccionID" ColumnName="TipoTransaccionID" />
+          <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Transacciones">
+      <EntityTypeMapping TypeName="BDFinanzasPersonalesModel.Transacciones">
+        <MappingFragment StoreEntitySet="Transacciones">
+          <ScalarProperty Name="NoTransaccion" ColumnName="NoTransaccion" />
+          <ScalarProperty Name="TipoTransaccionID" ColumnName="TipoTransaccionID" />
+          <ScalarProperty Name="UsuarioID" ColumnName="UsuarioID" />
+          <ScalarProperty Name="GastoOIngreso" ColumnName="GastoOIngreso" />
+          <ScalarProperty Name="TipoPagoID" ColumnName="TipoPagoID" />
+          <ScalarProperty Name="FechaTransaccion" ColumnName="FechaTransaccion" />
+          <ScalarProperty Name="FechaRegistro" ColumnName="FechaRegistro" />
+          <ScalarProperty Name="MontoTransaccion" ColumnName="MontoTransaccion" />
+          <ScalarProperty Name="NoTarjetaCR" ColumnName="NoTarjetaCR" />
+          <ScalarProperty Name="Comentario" ColumnName="Comentario" />
+          <ScalarProperty Name="Estado" ColumnName="Estado" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Usuarios">
+      <EntityTypeMapping TypeName="BDFinanzasPersonalesModel.Usuarios">
+        <MappingFragment StoreEntitySet="Usuarios">
+          <ScalarProperty Name="UsuarioID" ColumnName="UsuarioID" />
+          <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+          <ScalarProperty Name="Cedula" ColumnName="Cedula" />
+          <ScalarProperty Name="LimiteEgreso" ColumnName="LimiteEgreso" />
+          <ScalarProperty Name="TipoPersonaID" ColumnName="TipoPersonaID" />
+          <ScalarProperty Name="FechaCorte" ColumnName="FechaCorte" />
+          <ScalarProperty Name="Estado" ColumnName="Estado" />
+          <ScalarProperty Name="NombreUsuario" ColumnName="NombreUsuario" />
+          <ScalarProperty Name="Clave" ColumnName="Clave" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

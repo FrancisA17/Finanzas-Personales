@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="00896b74548b44cab05b86a5d65a346f" Name="Diagram1">
+        <EntityTypeShape EntityType="BDFinanzasPersonalesModel.Egresos" Width="1.5" PointX="3" PointY="3.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="BDFinanzasPersonalesModel.EstadoTransaccion" Width="1.5" PointX="3.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="BDFinanzasPersonalesModel.Ingresos" Width="1.5" PointX="8" PointY="7.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="BDFinanzasPersonalesModel.ProcesoCorte" Width="1.5" PointX="0.75" PointY="6.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="BDFinanzasPersonalesModel.TipoEgreso" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="BDFinanzasPersonalesModel.TipoIngreso" Width="1.5" PointX="5.75" PointY="8.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="BDFinanzasPersonalesModel.TipoPago" Width="1.5" PointX="0.75" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="BDFinanzasPersonalesModel.TipoPersona" Width="1.5" PointX="1.5" PointY="11.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="BDFinanzasPersonalesModel.TipoTransaccion" Width="1.5" PointX="3.75" PointY="8.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="BDFinanzasPersonalesModel.Transacciones" Width="1.5" PointX="6" PointY="2.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="BDFinanzasPersonalesModel.Usuarios" Width="1.5" PointX="3.75" PointY="10.5" IsExpanded="true" />
+        <AssociationConnector Association="BDFinanzasPersonalesModel.FK__Egresos__TipoEgr__3D5E1FD2" ManuallyRouted="false" />
+        <AssociationConnector Association="BDFinanzasPersonalesModel.FK__Egresos__TipoPag__3E52440B" ManuallyRouted="false" />
+        <AssociationConnector Association="BDFinanzasPersonalesModel.FK__Transacci__Estad__4F7CD00D" ManuallyRouted="false" />
+        <AssociationConnector Association="BDFinanzasPersonalesModel.FK__Ingresos__TipoIn__412EB0B6" ManuallyRouted="false" />
+        <AssociationConnector Association="BDFinanzasPersonalesModel.FK__Transacci__TipoP__4E88ABD4" ManuallyRouted="false" />
+        <AssociationConnector Association="BDFinanzasPersonalesModel.FK__Usuarios__TipoPe__45F365D3" ManuallyRouted="false" />
+        <AssociationConnector Association="BDFinanzasPersonalesModel.FK__Transacci__TipoT__4CA06362" ManuallyRouted="false" />
+        <AssociationConnector Association="BDFinanzasPersonalesModel.FK__Transacci__Usuar__4D94879B" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

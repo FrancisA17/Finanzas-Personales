@@ -1,0 +1,252 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="BDFinanzasPersonalesModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Egresos">
+    <Key>
+      <PropertyRef Name="EgresoID" />
+    </Key>
+    <Property Name="EgresoID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="TipoEgresoID" Type="int" />
+    <Property Name="TipoPagoxDefecto" Type="int" />
+    <Property Name="Descripcion" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Estado" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="EstadoTransaccion">
+    <Key>
+      <PropertyRef Name="EstadoTransaccionID" />
+    </Key>
+    <Property Name="EstadoTransaccionID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Descripcion" Type="varchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Ingresos">
+    <Key>
+      <PropertyRef Name="IngresoID" />
+    </Key>
+    <Property Name="IngresoID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="TipoIngresoID" Type="int" />
+    <Property Name="Descripcion" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Institucion" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Estado" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ProcesoCorte">
+    <Key>
+      <PropertyRef Name="CorteID" />
+    </Key>
+    <Property Name="CorteID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Año" Type="date" Nullable="false" />
+    <Property Name="Mes" Type="date" Nullable="false" />
+    <Property Name="FechaCorte" Type="date" Nullable="false" />
+    <Property Name="BalanceInicial" Type="money" Nullable="false" />
+    <Property Name="TotalIngresos" Type="money" Nullable="false" />
+    <Property Name="TotalEgresos" Type="money" Nullable="false" />
+    <Property Name="BalanceAlCorte" Type="money" Nullable="false" />
+  </EntityType>
+  <EntityType Name="TipoEgreso">
+    <Key>
+      <PropertyRef Name="TipoEgresoID" />
+    </Key>
+    <Property Name="TipoEgresoID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Descripcion" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Estado" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="TipoIngreso">
+    <Key>
+      <PropertyRef Name="TipoIngresoID" />
+    </Key>
+    <Property Name="TipoIngresoID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Descripcion" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Estado" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="TipoPago">
+    <Key>
+      <PropertyRef Name="TipoPagoID" />
+    </Key>
+    <Property Name="TipoPagoID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Descripcion" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Estado" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="TipoPersona">
+    <Key>
+      <PropertyRef Name="TipoPersonaID" />
+    </Key>
+    <Property Name="TipoPersonaID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Descripcion" Type="varchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="TipoTransaccion">
+    <Key>
+      <PropertyRef Name="TipoTransaccionID" />
+    </Key>
+    <Property Name="TipoTransaccionID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Descripcion" Type="varchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Transacciones">
+    <Key>
+      <PropertyRef Name="NoTransaccion" />
+    </Key>
+    <Property Name="NoTransaccion" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="TipoTransaccionID" Type="int" />
+    <Property Name="UsuarioID" Type="int" />
+    <Property Name="GastoOIngreso" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="TipoPagoID" Type="int" />
+    <Property Name="FechaTransaccion" Type="date" Nullable="false" />
+    <Property Name="FechaRegistro" Type="date" Nullable="false" />
+    <Property Name="MontoTransaccion" Type="money" Nullable="false" />
+    <Property Name="NoTarjetaCR" Type="varchar" MaxLength="50" />
+    <Property Name="Comentario" Type="varchar" MaxLength="200" />
+    <Property Name="Estado" Type="int" />
+  </EntityType>
+  <EntityType Name="Usuarios">
+    <Key>
+      <PropertyRef Name="UsuarioID" />
+    </Key>
+    <Property Name="UsuarioID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Nombre" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Cedula" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="LimiteEgreso" Type="money" Nullable="false" />
+    <Property Name="TipoPersonaID" Type="int" />
+    <Property Name="FechaCorte" Type="date" Nullable="false" />
+    <Property Name="Estado" Type="bit" Nullable="false" />
+    <Property Name="NombreUsuario" Type="varchar" MaxLength="25" Nullable="false" />
+    <Property Name="Clave" Type="varchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <Association Name="FK__Egresos__TipoEgr__3D5E1FD2">
+    <End Role="TipoEgreso" Type="Self.TipoEgreso" Multiplicity="0..1" />
+    <End Role="Egresos" Type="Self.Egresos" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TipoEgreso">
+        <PropertyRef Name="TipoEgresoID" />
+      </Principal>
+      <Dependent Role="Egresos">
+        <PropertyRef Name="TipoEgresoID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Egresos__TipoPag__3E52440B">
+    <End Role="TipoPago" Type="Self.TipoPago" Multiplicity="0..1" />
+    <End Role="Egresos" Type="Self.Egresos" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TipoPago">
+        <PropertyRef Name="TipoPagoID" />
+      </Principal>
+      <Dependent Role="Egresos">
+        <PropertyRef Name="TipoPagoxDefecto" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Ingresos__TipoIn__412EB0B6">
+    <End Role="TipoIngreso" Type="Self.TipoIngreso" Multiplicity="0..1" />
+    <End Role="Ingresos" Type="Self.Ingresos" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TipoIngreso">
+        <PropertyRef Name="TipoIngresoID" />
+      </Principal>
+      <Dependent Role="Ingresos">
+        <PropertyRef Name="TipoIngresoID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Transacci__Estad__4F7CD00D">
+    <End Role="EstadoTransaccion" Type="Self.EstadoTransaccion" Multiplicity="0..1" />
+    <End Role="Transacciones" Type="Self.Transacciones" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="EstadoTransaccion">
+        <PropertyRef Name="EstadoTransaccionID" />
+      </Principal>
+      <Dependent Role="Transacciones">
+        <PropertyRef Name="Estado" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Transacci__TipoP__4E88ABD4">
+    <End Role="TipoPago" Type="Self.TipoPago" Multiplicity="0..1" />
+    <End Role="Transacciones" Type="Self.Transacciones" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TipoPago">
+        <PropertyRef Name="TipoPagoID" />
+      </Principal>
+      <Dependent Role="Transacciones">
+        <PropertyRef Name="TipoPagoID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Transacci__TipoT__4CA06362">
+    <End Role="TipoTransaccion" Type="Self.TipoTransaccion" Multiplicity="0..1" />
+    <End Role="Transacciones" Type="Self.Transacciones" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TipoTransaccion">
+        <PropertyRef Name="TipoTransaccionID" />
+      </Principal>
+      <Dependent Role="Transacciones">
+        <PropertyRef Name="TipoTransaccionID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Transacci__Usuar__4D94879B">
+    <End Role="Usuarios" Type="Self.Usuarios" Multiplicity="0..1" />
+    <End Role="Transacciones" Type="Self.Transacciones" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Usuarios">
+        <PropertyRef Name="UsuarioID" />
+      </Principal>
+      <Dependent Role="Transacciones">
+        <PropertyRef Name="UsuarioID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Usuarios__TipoPe__45F365D3">
+    <End Role="TipoPersona" Type="Self.TipoPersona" Multiplicity="0..1" />
+    <End Role="Usuarios" Type="Self.Usuarios" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TipoPersona">
+        <PropertyRef Name="TipoPersonaID" />
+      </Principal>
+      <Dependent Role="Usuarios">
+        <PropertyRef Name="TipoPersonaID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="BDFinanzasPersonalesModelStoreContainer">
+    <EntitySet Name="Egresos" EntityType="Self.Egresos" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="EstadoTransaccion" EntityType="Self.EstadoTransaccion" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Ingresos" EntityType="Self.Ingresos" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ProcesoCorte" EntityType="Self.ProcesoCorte" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TipoEgreso" EntityType="Self.TipoEgreso" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TipoIngreso" EntityType="Self.TipoIngreso" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TipoPago" EntityType="Self.TipoPago" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TipoPersona" EntityType="Self.TipoPersona" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TipoTransaccion" EntityType="Self.TipoTransaccion" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Transacciones" EntityType="Self.Transacciones" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Usuarios" EntityType="Self.Usuarios" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK__Egresos__TipoEgr__3D5E1FD2" Association="Self.FK__Egresos__TipoEgr__3D5E1FD2">
+      <End Role="TipoEgreso" EntitySet="TipoEgreso" />
+      <End Role="Egresos" EntitySet="Egresos" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Egresos__TipoPag__3E52440B" Association="Self.FK__Egresos__TipoPag__3E52440B">
+      <End Role="TipoPago" EntitySet="TipoPago" />
+      <End Role="Egresos" EntitySet="Egresos" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Ingresos__TipoIn__412EB0B6" Association="Self.FK__Ingresos__TipoIn__412EB0B6">
+      <End Role="TipoIngreso" EntitySet="TipoIngreso" />
+      <End Role="Ingresos" EntitySet="Ingresos" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Transacci__Estad__4F7CD00D" Association="Self.FK__Transacci__Estad__4F7CD00D">
+      <End Role="EstadoTransaccion" EntitySet="EstadoTransaccion" />
+      <End Role="Transacciones" EntitySet="Transacciones" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Transacci__TipoP__4E88ABD4" Association="Self.FK__Transacci__TipoP__4E88ABD4">
+      <End Role="TipoPago" EntitySet="TipoPago" />
+      <End Role="Transacciones" EntitySet="Transacciones" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Transacci__TipoT__4CA06362" Association="Self.FK__Transacci__TipoT__4CA06362">
+      <End Role="TipoTransaccion" EntitySet="TipoTransaccion" />
+      <End Role="Transacciones" EntitySet="Transacciones" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Transacci__Usuar__4D94879B" Association="Self.FK__Transacci__Usuar__4D94879B">
+      <End Role="Usuarios" EntitySet="Usuarios" />
+      <End Role="Transacciones" EntitySet="Transacciones" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Usuarios__TipoPe__45F365D3" Association="Self.FK__Usuarios__TipoPe__45F365D3">
+      <End Role="TipoPersona" EntitySet="TipoPersona" />
+      <End Role="Usuarios" EntitySet="Usuarios" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>
